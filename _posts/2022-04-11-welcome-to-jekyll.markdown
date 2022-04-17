@@ -10,11 +10,11 @@ categories: jekyll update
 
 The operation of sampling is ubiquitous is statistics and machine learning. Many algorithms often require us to sample from normal distribution, or from a posterior distribution, or sometimes even sample from a function for which the formula is not fully known.  
 
-In this short blog-post we will explain what sampling is about and give a few examples. However, we will assume one thing, namely that **we always can sample from uniform distribution between** $0$ **and** $1$. This is a fair assumption because of pseudorandom number generators such as mt19937 and many others that have been in use for decades for this exact purpose.  
+In this short blog-post we will explain what sampling is about and give a few examples. However, we will assume one thing, namely that **we always can sample from uniform distribution between** \(0 \) **and** \(1\). This is a fair assumption because of pseudorandom number generators such as mt19937 and many others that have been in use for decades for this exact purpose.  
 
 We can now move to more interesting cases.
 
 
 # Sampling from normal distribution - Box-Muller
 
-First we will learn how to effectively sample from the normal distribution, arguably the most important of all distributions. You can do it in multiple ways, but here we will present a very efficient and clever procedure that is super easy to implement, it's called Box-Muller transform. The idea is simple, you take two samples from random uniform $\mathcal{U} (0, 1)$, you plug them into the Box-Muller transform and in return you get two samples from standard normal distribution $\mathcal{N}(0, 1)$.
+First we will learn how to effectively sample from the normal distribution, arguably the most important of all distributions. You can do it in multiple ways, but here we will present a very efficient and clever procedure that is super easy to implement, it's called Box-Muller transform. The idea is simple, you take two samples from random uniform \(\mathcal{U} (0, 1)\), you plug them into the Box-Muller transform and in return you get two samples from standard normal distribution \(\mathcal{N}(0, 1)\).
