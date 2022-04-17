@@ -3,7 +3,7 @@ layout: post
 title:  Sampling
 date:   2022-04-11 21:28:10 +0200
 description:    What does it mean to sample from a distribution?
-categories: jekyll update
+categories: posts
 ---
 
 # Premise
@@ -18,3 +18,5 @@ We can now move to more interesting cases.
 # Sampling from normal distribution - Box-Muller
 
 First we will learn how to effectively sample from the normal distribution, arguably the most important of all distributions. You can do it in multiple ways, but here we will present a very efficient and clever procedure that is super easy to implement, it's called Box-Muller transform. The idea is simple, you take two samples from random uniform $$\mathcal{U} (0, 1)$$, you plug them into the Box-Muller transform and in return you get two samples from standard normal distribution $$\mathcal{N}(0, 1)$$.
+
+<video src="/assets/videos/sampling/BoxMuller.mp4" controls="controls" style="max-height:640px;">
