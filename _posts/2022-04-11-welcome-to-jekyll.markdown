@@ -19,4 +19,4 @@ We can now move to more interesting cases.
 
 First we will learn how to effectively sample from the normal distribution, arguably the most important of all distributions. You can do it in multiple ways, but here we will present a very efficient and clever procedure that is super easy to implement, it's called Box-Muller transform. The idea is simple, you take two samples from random uniform $$\mathcal{U} (0, 1)$$, you plug them into the Box-Muller transform and in return you get two samples from standard normal distribution $$\mathcal{N}(0, 1)$$.
 
-<video src="/assets/videos/sampling/BoxMuller.mp4" controls="controls" style="max-height:320px;">
+<video src="/assets/videos/sampling/BoxMuller.mp4" controls="controls" style="max-height:460px;">
