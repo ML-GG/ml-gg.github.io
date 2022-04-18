@@ -2,10 +2,9 @@
 layout: post
 title:  Sampling
 date:   2022-04-18 21:28:10 +0200
-description:    "What does it mean to sample from a distribution?"
+description:    What does it mean to sample from a distribution?
 categories: jekyll update
 ---
-
 # Premise
 
 The operation of sampling is ubiquitous is statistics and machine learning. Many algorithms often require us to sample from normal distribution, or from a posterior distribution, or sometimes even sample from a function for which the formula is not fully known.  
