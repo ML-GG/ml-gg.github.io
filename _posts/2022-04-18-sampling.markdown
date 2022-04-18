@@ -19,6 +19,6 @@ We can now move to more interesting cases.
 
 First we will learn how to effectively sample from the normal distribution, arguably the most important of all distributions. You can do it in multiple ways, but here we will present a very efficient and clever procedure that is super easy to implement, it's called Box-Muller transform. The idea is simple, you take two samples from random uniform $$\mathcal{U} (0, 1)$$, you plug them into the Box-Muller transform and in return you get two samples from standard normal distribution $$\mathcal{N}(0, 1)$$.  
 
-So how exactly do you get normal samples from the uniform ones? The idea of Box-Muller transform is the following: consider two independent random uniform variables $$U_1, U_2 \sim \mathcal{U} (0, 1)$$. If you now calculate $$Z_1 = \sqrt{-2 \ln U_1} \cos(2 \pi U_2), Z_2 = \sqrt{-2 \ln U_1} \sin(2 \pi U_2)$$, then $$Z_1, Z_2 \sim \mathcal{N}(0, 1)$$ and they are also independent.
+So how exactly do you get normal samples from the uniform ones? The idea of Box-Muller transform is the following: consider two independent random uniform variables $$U_1, U_2 \sim \mathcal{U} (0, 1)$$. If you now calculate $$Z_1 = \sqrt{-2 \ln U_1} \cos(2 \pi U_2), Z_2 = \sqrt{-2 \ln U_1} \sin(2 \pi U_2)$$, then $$Z_1, Z_2 \sim \mathcal{N}(0, 1)$$ and they are also independent. 
 
 <video src="/assets/videos/sampling/BoxMuller.mp4" controls="controls" style="max-height:460px;">
