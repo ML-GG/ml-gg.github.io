@@ -21,12 +21,14 @@ First we will learn how to effectively sample from the normal distribution, argu
 
 So how exactly do you get normal samples from the uniform ones? The idea of Box-Muller transform is the following: consider two independent random uniform variables $$U_1, U_2 \sim \mathcal{U} (0, 1)$$. If you now calculate $$Z_1 = \sqrt{-2 \ln U_1} \cos(2 \pi U_2), Z_2 = \sqrt{-2 \ln U_1} \sin(2 \pi U_2)$$, then $$Z_1, Z_2 \sim \mathcal{N}(0, 1)$$ and they are also independent. 
 
-
+<p align="left">
+  <video src="/assets/videos/sampling/BoxMuller.mp4" controls="controls" style="max-height:460px;">
+</p>
 
 We can of course turn these samples from standard normal distribution (mean $$0$$ and variance $$1$$ into any arbitrary normal distribution with mean $$\mu$$ and variance $$\sigma^2$$ simply by multiplying all samples by $$\sigma$$ and adding $$\mu$$. This is because $$ \sigma \cdot \mathcal{U} (0, 1) + \mu = \mathcal{U} (\mu, \sigma^2)$$.  
 
 
-# Sampling from a distribution with known formula
+## Sampling from a distribution with known formula
 
 Can we also turn samples from random uniform into samples from other distributions such as exponential, beta, gamma, etc.? It turns out we can. To explain how let us introduce cumulative distribution function (CDF).  
 
