@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  Sampling
-date:   2022-04-178 18:26:10 +0200
+date:   2022-04-17 18:26:10 +0200
 description:    What does it mean to sample from a distribution?
-categories: jekyll update
+categories: posts
 ---
 # Premise
 
