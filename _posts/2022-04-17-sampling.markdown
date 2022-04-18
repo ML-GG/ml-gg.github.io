@@ -5,7 +5,8 @@ date:   2022-04-17 18:26:10 +0200
 description:    What does it mean to sample from a distribution?
 categories: posts
 ---
-# Premise
+
+## Premise
 
 The operation of sampling is ubiquitous is statistics and machine learning. Many algorithms often require us to sample from normal distribution, or from a posterior distribution, or sometimes even sample from a function for which the formula is not fully known.  
 
@@ -14,7 +15,7 @@ In this short blog-post we will explain what sampling is about and give a few ex
 We can now move to more interesting cases.
 
 
-# Sampling from normal distribution - Box-Muller
+## Sampling from normal distribution - Box-Muller
 
 First we will learn how to effectively sample from the normal distribution, arguably the most important of all distributions. You can do it in multiple ways, but here we will present a very efficient and clever procedure that is super easy to implement, it's called Box-Muller transform. The idea is simple, you take two samples from random uniform $$\mathcal{U} (0, 1)$$, you plug them into the Box-Muller transform and in return you get two samples from standard normal distribution $$\mathcal{N}(0, 1)$$.
 
