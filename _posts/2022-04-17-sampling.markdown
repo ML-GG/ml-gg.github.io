@@ -21,12 +21,12 @@ First we will learn how to effectively sample from the normal distribution, argu
 
 So how exactly do you get normal samples from the uniform ones? The idea of Box-Muller transform is the following: consider two independent random uniform variables $$U_1, U_2 \sim \mathcal{U} (0, 1)$$. If you now calculate $$Z_1 = \sqrt{-2 \ln U_1} \cos(2 \pi U_2), Z_2 = \sqrt{-2 \ln U_1} \sin(2 \pi U_2)$$, then $$Z_1, Z_2 \sim \mathcal{N}(0, 1)$$ and they are also independent. 
 
-We can of course turn these samples from standard normal distribution (mean $$0$$ and variance $$1$$ into any arbitrary normal distribution with mean $$\mu$$ and variance $$\sigma^2$$ simply by multiplying all samples by $$\sigma$$ and adding $$\mu$$. This is because $$ \sigma \cdot \mathcal{U} (0, 1) + \mu = \mathcal{U} (\mu, \sigma^2)$$.  
+We can of course turn these samples from standard normal distribution (mean $$0$$ and variance $$1$$) into any arbitrary normal distribution (with mean $$\mu$$ and variance $$\sigma^2$$) simply by multiplying all samples by $$\sigma$$ and adding $$\mu$$. This is because $$ \sigma \cdot \mathcal{U} (0, 1) + \mu = \mathcal{U} (\mu, \sigma^2)$$.  
 
 
 <video src="/assets/videos/sampling/BoxMuller.mp4" controls="controls" width="auto" width="100%"></video>
 
-## Sampling from a distribution with known formula
+## Sampling from a distribution with a known formula
 
 Can we also turn samples from random uniform into samples from other distributions such as exponential, beta, gamma, etc.? It turns out we can. To explain how let us introduce cumulative distribution function (CDF).  
 
@@ -35,8 +35,16 @@ Every distribution has a probability density function (PDF), a non-negative func
 * \\(\lim_{x \to + \infty} F(x) = 1\\)
 * \\(F\\) is non-decreasing  
 
-How can we use that to sample? Since the values of CDF are in range \\( [0, 1] \\) and we have access to random samples from \\( [0, 1] \\) interval, we can use the **inverse of CDF**. The concept of inverse functions is simple: if a function \\( f \\) is such that \\( f(a) = b \\), then the inverse of \\( f \\), let's call it \\( g \\), satisfies \\( g(b) = a \\).  
+How can we use that to sample? Since the values of CDF are in range \\( [0, 1] \\) and we have access to random samples from \\( [0, 1] \\) interval, we can use the **inverse of CDF**. The concept of inverse functions is simple: if a function \\( f \\) is such that \\( f(a) = b \\), then the inverse of \\( f \\), let's call it \\( g \\), satisfies \\( g(b) = a \\). There are many inverse functions in use, for example logarithm is the inverse of exponent, n-th root is the inverse of n-th power, and many others.  
 
 This idea works well if we know the exact formula for the inverse of CDF. For some distributions we do (eg. exponential) and for others we can approximate it (eg. normal).
 
 <video src="/assets/videos/sampling/UniformToNormal.mp4" controls="controls" width="auto" width="100%"></video>
+
+## Sampling from a distribution with a formula that's not fully known
+
+There are cases in which we don't know the CDF or its inverse, better yet, we might not even fully known the formula for PDF. By not fully known we mean that \\( p(x) = \frac{1}{Z} \tilde{p} (x) \\) and we don't know the value for \\( Z \\). In that case, can we sample from \\( \tilde{p} \\) without having to calculate \\( Z \\) first? It turns out we can and it's very useful certain scenarios.  
+
+Firstly, let's explain what is the deal. Consider a function \\( f(x) = \frac{1}{Z} e^{-x^2} \\). In that case \\( e^{-x^2} \\) is not a probability density function, because it doesn't integrate to \\( 1 \\). For it to be a PDF it should be scaled by the constant \\( Z \\). But it turns out we don't have to bother, we can use that \\( e^{-x^2} \\) part, ignore the \\( \frac{1}{Z} \\) part, and in result still get correct samples from \\( f \\).  
+
+This scenario might seem artificial, but it is not. In Bayesian statistics, the posterior distribution is equal to prior distribution times likelihood, divided by a scaling constant. Formally: \\( p(\theta | X) = \frac{p (X | \theta) p (\theta)}{ \int p(X | \theta ) p(\theta) \mathrm{d} \theta } \\).
