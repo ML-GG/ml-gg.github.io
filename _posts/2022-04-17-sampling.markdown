@@ -24,7 +24,7 @@ So how exactly do you get normal samples from the uniform ones? The idea of Box-
 We can of course turn these samples from standard normal distribution (mean $$0$$ and variance $$1$$ into any arbitrary normal distribution with mean $$\mu$$ and variance $$\sigma^2$$ simply by multiplying all samples by $$\sigma$$ and adding $$\mu$$. This is because $$ \sigma \cdot \mathcal{U} (0, 1) + \mu = \mathcal{U} (\mu, \sigma^2)$$.  
 
 
-<video src="/assets/videos/sampling/BoxMuller.mp4" controls="controls" style="max-height:460px;"></video>
+<video src="/assets/videos/sampling/BoxMuller.mp4" controls="controls" style="max-height:420px;"></video>
 
 ## Sampling from a distribution with known formula
 
@@ -35,8 +35,8 @@ Every distribution has a probability density function (PDF), a non-negative func
 * \\(\lim_{x \to + \infty} F(x) = 1\\)
 * \\(F\\) is non-decreasing  
 
-todo
+How can we use that to sample? Since the values of CDF are in range \\( [0, 1] \\) and we have access to random samples from \\( [0, 1] \\) interval, we can use the **inverse of CDF**. The concept of inverse functions is simple: if a function \\( f \\) is such that \\( f(a) = b \\), then the inverse of \\( f \\), let's call it \\( g \\), satisfies \\( g(b) = a \\).  
 
-<div align="center">
-  <video src="/assets/videos/sampling/UniformToNormal.mp4" controls="controls" style="max-height:460px;">
-</div>
+This idea works well if we know the exact formula for the inverse of CDF. For some distributions we do (eg. exponential) and for others we can approximate it (eg. normal).
+
+<video src="/assets/videos/sampling/UniformToNormal.mp4" controls="controls" style="max-height:420px;"></video>
