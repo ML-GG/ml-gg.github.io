@@ -24,6 +24,10 @@ So how exactly do you get normal samples from the uniform ones? The idea of Box-
 We can of course turn these samples from standard normal distribution (mean $$0$$ and variance $$1$$ into any arbitrary normal distribution with mean $$\mu$$ and variance $$\sigma^2$$ simply by multiplying all samples by $$\sigma$$ and adding $$\mu$$. This is because $$ \sigma \cdot \mathcal{U} (0, 1) + \mu = \mathcal{U} (\mu, \sigma^2)$$.  
 
 
+<div align="center">
+  <video src="/assets/videos/sampling/BoxMuller.mp4" style="max-height:460px;">
+</div>
+
 ## Sampling from a distribution with known formula
 
 Can we also turn samples from random uniform into samples from other distributions such as exponential, beta, gamma, etc.? It turns out we can. To explain how let us introduce cumulative distribution function (CDF).  
