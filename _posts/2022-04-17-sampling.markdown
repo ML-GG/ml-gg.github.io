@@ -24,7 +24,7 @@ So how exactly do you get normal samples from the uniform ones? The idea of Box-
 We can of course turn these samples from standard normal distribution (mean $$0$$ and variance $$1$$ into any arbitrary normal distribution with mean $$\mu$$ and variance $$\sigma^2$$ simply by multiplying all samples by $$\sigma$$ and adding $$\mu$$. This is because $$ \sigma \cdot \mathcal{U} (0, 1) + \mu = \mathcal{U} (\mu, \sigma^2)$$.  
 
 
-<video src="/assets/videos/sampling/BoxMuller.mp4" controls="controls" style="max-height:420px;"></video>
+<video src="/assets/videos/sampling/BoxMuller.mp4" controls="controls" width="auto" width="100%"></video>
 
 ## Sampling from a distribution with known formula
 
@@ -39,4 +39,4 @@ How can we use that to sample? Since the values of CDF are in range \\( [0, 1] \
 
 This idea works well if we know the exact formula for the inverse of CDF. For some distributions we do (eg. exponential) and for others we can approximate it (eg. normal).
 
-<video src="/assets/videos/sampling/UniformToNormal.mp4" controls="controls" style="max-height:420px;"></video>
+<video src="/assets/videos/sampling/UniformToNormal.mp4" controls="controls" width="auto" width="100%"></video>
