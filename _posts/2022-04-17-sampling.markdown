@@ -47,4 +47,4 @@ There are cases in which we don't know the CDF or its inverse, better yet, we mi
 
 Firstly, let's explain what is the deal. Consider a function \\( f(x) = \frac{1}{Z} e^{-x^2} \\). In that case \\( e^{-x^2} \\) is not a probability density function, because it doesn't integrate to \\( 1 \\). For it to be a PDF it should be scaled by the constant \\( Z \\). But it turns out we don't have to bother, we can use that \\( e^{-x^2} \\) part, ignore the \\( \frac{1}{Z} \\) part, and in result still get correct samples from \\( f \\).  
 
-This scenario might seem artificial, but it is not. In Bayesian statistics, the posterior distribution is equal to prior distribution times likelihood, divided by a scaling constant. Formally: \\( p( \theta | X) = \frac{p (X \| \theta) p ( \theta)}{ \int p(X \| \theta ) p(\theta) \mathrm{d} \theta } \\).
+This scenario might seem artificial, but it is not. In Bayesian statistics, the posterior distribution is equal to prior distribution times likelihood, divided by a scaling constant. Formally: \\( p( \theta \| X) = \frac{p (X \| \theta) p ( \theta)}{ \int p(X \| \theta ) p(\theta) \mathrm{d} \theta } \\).
