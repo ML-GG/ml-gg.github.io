@@ -30,7 +30,7 @@ We can of course turn these samples from standard normal distribution (mean $$0$
 
 Can we also turn samples from random uniform into samples from other distributions such as exponential, beta, gamma, etc.? It turns out we can. To explain how let us introduce cumulative distribution function (CDF).  
 
-Every distribution has a probability density function (PDF), a non-negative function $$f$$ that integrates to $$1$$ and describes the distribution. A cumulative distribution function (CDF) is defined as the integral of PDF: $$F(x) = \int_{-\infty}^{x} f(x) \mathrm{d} x$$. CDF has a few useful features, namely:  
+Every distribution has a probability density function (PDF), a non-negative function $$f$$ that integrates to $$1$$ and describes the distribution. A cumulative distribution function (CDF) is defined as the integral of PDF: $$F(x) = \int_{-\infty}^{x} f(t) \mathrm{d} t$$. CDF has a few useful features, namely:  
 * \\(\lim_{x \to - \infty} F(x) = 0\\)
 * \\(\lim_{x \to + \infty} F(x) = 1\\)
 * \\(F\\) is non-decreasing  
