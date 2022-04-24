@@ -18,7 +18,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: ML-GG: blog about machine learning
+title: >-
+  ML-GG: blog about machine learning
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   Blog about machine learning and statistics.
