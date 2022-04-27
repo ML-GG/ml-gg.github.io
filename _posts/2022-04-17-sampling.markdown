@@ -43,7 +43,7 @@ This idea works well if we know the exact formula for the inverse of CDF. For so
 
 ## What if the formula is not fully known?
 
-There are cases in which we don't know the CDF or its inverse, better yet, we might not even fully known the formula for PDF. By not fully known we mean that \\( p(x) = \frac{1}{Z} \tilde{p} (x) \\) and we don't know the value for \\( Z \\). In that case, can we sample from \\( \tilde{p} \\) without having to calculate \\( Z \\) first? It turns out we can and it's very useful certain scenarios.  
+There are cases in which we don't know the CDF or its inverse, better yet, we might not even fully known the formula for PDF. By not fully known we mean that \\( p(x) = \frac{1}{Z} \tilde{p} (x) \\) and we don't know the value for \\( Z \\). In that case, can we sample from \\( p \\) without having to calculate \\( Z \\) first? It turns out we can and it's very useful certain scenarios.  
 
 Firstly, let's explain what is the deal. Consider a function \\( f(x) = \frac{1}{Z} e^{-x^2} \\). In that case \\( e^{-x^2} \\) is not a probability density function, because it doesn't integrate to \\( 1 \\). For it to be a PDF it should be scaled by the constant \\( Z \\). But it turns out we don't have to bother, we can use that \\( e^{-x^2} \\) part, ignore the \\( \frac{1}{Z} \\) part, and in result still get correct samples from \\( f \\).  
 
@@ -51,7 +51,10 @@ This scenario might seem artificial, but it is not. In Bayesian statistics, the 
 
 ## Rejection sampling
 
-abc
+Rejection sampling tells us to construct a simpler **proposal distribution** \\( q(x) \\) that we can easily sample from. This might be a uniform distribution, normal distribution or whichever distribution we want, as long as we can sample from it easily. Next, we introduce a constant \\( k \\) such that \\( k q(x) \ge \tilde{p} (x) \\) for each \\( x\\). In other words we want the graph of the proposal distribution to always be above the graph of \\( \tilde{p} \\). The reason for such gymnastics will become clear shortly.  
+
+Now, at each step of rejection sampling we generate a sample from \\( q(x) \\), let's call the sample \\( x_o \\). Remember, that we specifically requested that \\( q \\) be easy to sample from, so no issues so far. Next, we generate a sample from the uniform distribution over the interval \\( [0, kq(x_0)]\\).
+
 
 ## Metropolis algorithm
 
