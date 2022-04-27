@@ -41,10 +41,18 @@ This idea works well if we know the exact formula for the inverse of CDF. For so
 
 <video src="/assets/videos/sampling/UniformToNormal.mp4" controls="controls" width="auto" width="100%"></video>
 
-## Sampling from a distribution with a formula that's not fully known
+## What if the formula is not fully known?
 
 There are cases in which we don't know the CDF or its inverse, better yet, we might not even fully known the formula for PDF. By not fully known we mean that \\( p(x) = \frac{1}{Z} \tilde{p} (x) \\) and we don't know the value for \\( Z \\). In that case, can we sample from \\( \tilde{p} \\) without having to calculate \\( Z \\) first? It turns out we can and it's very useful certain scenarios.  
 
 Firstly, let's explain what is the deal. Consider a function \\( f(x) = \frac{1}{Z} e^{-x^2} \\). In that case \\( e^{-x^2} \\) is not a probability density function, because it doesn't integrate to \\( 1 \\). For it to be a PDF it should be scaled by the constant \\( Z \\). But it turns out we don't have to bother, we can use that \\( e^{-x^2} \\) part, ignore the \\( \frac{1}{Z} \\) part, and in result still get correct samples from \\( f \\).  
 
-This scenario might seem artificial, but it is not. In Bayesian statistics, the posterior distribution is equal to prior distribution times likelihood, divided by a scaling constant. Formally: \\( p( \theta \| X) = \frac{p (X \| \theta) p ( \theta)}{ \int p(X \| \theta ) p(\theta) \mathrm{d} \theta } \\).
+This scenario might seem artificial, but it is not. In Bayesian statistics, the posterior distribution is equal to prior distribution times likelihood, divided by a scaling constant. Formally: \\( p( \theta \| X) = \frac{p (X \| \theta) p ( \theta)}{ \int p(X \| \theta ) p(\theta) \mathrm{d} \theta } \\). The integral in the denominator is just a single number, but it's notoriously hard to calculate in some cases. If we want to sample from the posterior it would be very convenient if we could just disregard this integral and still get the samples. Luckily, there are methods to achieve that, for example **rejections sampling** or **Markov Chain Monte Carlo**.
+
+## Rejection sampling
+
+abc
+
+## Metropolis algorithm
+
+abc
