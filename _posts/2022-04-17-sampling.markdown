@@ -62,4 +62,4 @@ Rejection sampling requires us to choose the proposal distribution \\( q \\) and
 
 ## Metropolis algorithm
 
-abc
+<video src="/assets/videos/sampling/Metropolis.mp4" controls="controls" width="auto" width="100%"></video>
